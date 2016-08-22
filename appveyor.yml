@@ -1,0 +1,10 @@
+version: 1.0.{build}
+cache: tools\helloworld.cmd
+build_script:
+- cmd: >-
+    IF NOT EXIST "tools" (md tools)
+
+    IF EXIST "tools\helloworld.cmd" (tools\helloworld.cmd)
+
+    IF NOT EXIST "tools\helloworld.cmd" (echo echo Hello World > tools\helloworld.cmd)
+test: off
